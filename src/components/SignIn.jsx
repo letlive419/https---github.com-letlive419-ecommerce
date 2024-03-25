@@ -7,13 +7,13 @@ import { useState } from "react";
 
 // Initialize Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyDhV9GvYGoGWfN4qWHCbwJXYdm5j7X399g",
-    authDomain: "ecommerce-47eb5.firebaseapp.com",
-    projectId: "ecommerce-47eb5",
-    storageBucket: "ecommerce-47eb5.appspot.com",
-    messagingSenderId: "438536251100",
-    appId: "1:438536251100:web:9920c482f9b8cbf914f619",
-    measurementId: "G-NVQFYM1Q11"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APPID,
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID
   };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -21,7 +21,7 @@ const auth = getAuth(app);
 
 function SignIn() {
 
-    
+    {console.log(process.env.REACT_APP_API_KEY)}
  
     onAuthStateChanged(auth, (user) => {
         if (user) {
